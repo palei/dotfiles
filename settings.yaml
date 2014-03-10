@@ -1,0 +1,11 @@
+bash:
+    src: bash.rc
+    dst: ~/.bashrc
+
+git:
+    src: gitconfig
+    dst: ~/.gitconfig
+
+tmux:
+    src: tmux.conf
+    dst: ~/.tmux.conf

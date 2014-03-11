@@ -1,11 +1,27 @@
 bash:
-    src: bash.rc
+    src: bashrc
     dst: ~/.bashrc
 
-git:
+vim:
+    src: vim.rc
+    dst: ~/.vimrc
+
+gitconfig:
     src: gitconfig
     dst: ~/.gitconfig
+
+gitignore:
+    src: gitignore
+    src: ~/.gitignore
 
 tmux:
     src: tmux.conf
     dst: ~/.tmux.conf
+
+ssh:
+    src: sshconfig
+    dst: ~/.ssh/config
+
+irssi:
+    src: irssi
+    dst: ~/.irssi/

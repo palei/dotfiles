@@ -1,6 +1,18 @@
-#! /usr/bin/env python
-from optparse import OptionParser
+#!/usr/bin/env python
+#A simple script to install config files 
+
+from __future__ import print_function
 import sys, yaml, os, shutil
+
+home = os.path.expanduser('~')
+
+try:
+    with open('settings.yaml', 'r') as stream:
+        settings = yaml.load(stream)
+
+except IOError:
+    print('Could not parse settings.yaml. Aborting.')
+    sys.exit(0)
 
 def main():
 
@@ -21,17 +33,17 @@ def main():
         return "Source config does not exist."
 
     if os.path.exists(dst):
-        print "The destination file already exists. Over-write? [y/N/d] ", 
+        print("The destination file already exists. Over-write? [y/N/d] "), 
 
     shutil.copy(src, dst)
 
-def read_settings():
-    try:
-        stream = open('settings.yaml', 'r')
-        return yaml.load(stream)
-    except Error:
-        print "Could not parse settings.yaml. Aborting."
-        sys.exit(0)
+def print_available_settings():
+    print("\nAvailable settings:\n")
+    for config in settings.iteritems():
+        print("%s:" % config[0])
+        print("    src: %s" % config[1]['src'])
+        print("    dst: %s" % config[1]['dst'])
+        print("")
 
 if __name__ == '__main__':
-    print main()
+    main()

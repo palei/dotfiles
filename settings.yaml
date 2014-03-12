@@ -21,3 +21,7 @@ tmux:
 ssh:
     src: sshconfig
     dst: ~/.ssh/config
+
+test:
+    src: test.conf
+    dst: ~/.test.conf

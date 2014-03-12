@@ -4,7 +4,7 @@
 
 [alias]
     lg = log --graph --pretty=format:'%Cred%h -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>'
-	plog = log --pretty=tformat:'%h %Cblue%cr%Creset %cn %Cgreen%s%Creset'
+    plog = log --pretty=tformat:'%h %Cblue%cr%Creset %cn %Cgreen%s%Creset'
     l0g = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     co = checkout
     st = status -sb

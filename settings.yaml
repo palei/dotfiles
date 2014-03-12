@@ -21,7 +21,3 @@ tmux:
 ssh:
     src: sshconfig
     dst: ~/.ssh/config
-
-irssi:
-    src: irssi
-    dst: ~/.irssi/

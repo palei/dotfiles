@@ -23,9 +23,7 @@ def main():
     if os.path.exists(dst):
         print "The destination file already exists. Over-write? [y/N/d] ", 
 
-    shutil.copy(src, dst)    
-
-
+    shutil.copy(src, dst)
 
 def read_settings():
     try:

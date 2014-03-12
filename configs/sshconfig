@@ -1,0 +1,11 @@
+# This is my ~/.ssh/config
+
+Host unk
+    HostName unk.me
+    Port 2222
+    User noob13
+
+Host angel
+    HostName angeltron.game-host.org
+    Port 22
+    User noob13

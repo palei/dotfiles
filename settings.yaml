@@ -3,7 +3,7 @@ bash:
     dst: ~/.bashrc
 
 vim:
-    src: vim.rc
+    src: vimrc
     dst: ~/.vimrc
 
 gitconfig:

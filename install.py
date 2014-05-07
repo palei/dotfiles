@@ -52,8 +52,8 @@ def install(config):
 
         if response == 'y': 
             print(colorize("\nCONFIG INSTALLED: %s" % dst, 'green'))
+            shutil.copy(src, dst)
             break
-            #shutil.copy(src, dst)
 
         elif response == 'n':
             print(colorize('\nCONFIG NOT INSTALLED: %s' % src, 'red'))

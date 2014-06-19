@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+from __future__ import print_function
+import yaml, os, sys
+
+try:
+    with open('settings.yaml') as stream:
+        settings = yaml.load(stream)
+
+except IOError:
+    print('Could not load settings.yaml')
+    sys.exit(0)
+
+for index, item in settings.iteritems():
+    src = os.path.join('files', item['src'])
+    dst = os.path.expanduser(item['dst'])
+
+    if not os.path.exists(dst):
+        os.symlink(src, dst)

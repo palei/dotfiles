@@ -1,13 +1,70 @@
-set nocompatible
-syntax enable
-set encoding=utf-8
-set showcmd
-filetype plugin indent on
-set nowrap
-set tabstop=2 shiftwidth=2
-set expandtab
-set backspace=indent,eol,start
-set hlsearch
-set incsearch
+"         _                    
+"  __   _(_)_ __ ___  _ __ ___ 
+"  \ \ / / | '_ ` _ \| '__/ __|
+"   \ V /| | | | | | | | | (__ 
+"    \_/ |_|_| |_| |_|_|  \___|
+"   
+"
+
+"general stuff"
+
+set history=700
+filetype plugin on
+filetype indent on
 set ignorecase
-set smartcase
+set incsearch
+set noerrorbells
+set novisualbell
+
+set autoread
+
+set foldcolumn=1
+
+set encoding=utf8
+set backspace=indent,eol,start
+
+
+"backups and swap files"
+
+set nobackup
+set nowb
+set noswapfile
+
+"indentation"
+
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+
+"syntax highlighting"
+
+syntax enable
+try
+    colorscheme desert
+catch
+endtry
+
+set background=dark
+
+"status line"
+
+set laststatus=2
+set statusline=\ You're\ on\ line\ %l\ of\ %F%m%r%h
+highlight statusline ctermbg=white
+highlight statusline ctermfg=darkblue
+
+"other stuff"
+
+set showcmd
+
+set nowrap
+
+command W w !sudo tee % > /dev/null
+
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction

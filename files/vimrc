@@ -1,12 +1,6 @@
-"         _                    
-"  __   _(_)_ __ ___  _ __ ___ 
-"  \ \ / / | '_ ` _ \| '__/ __|
-"   \ V /| | | | | | | | | (__ 
-"    \_/ |_|_| |_| |_|_|  \___|
-"   
-"
+"~./vimrc
 
-"general stuff"
+" general stuff "
 
 set history=700
 filetype plugin on
@@ -23,21 +17,20 @@ set foldcolumn=1
 set encoding=utf8
 set backspace=indent,eol,start
 
-
-"backups and swap files"
+" backups and swap files "
 
 set nobackup
 set nowb
 set noswapfile
 
-"indentation"
+" indentation "
 
 set expandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
 
-"syntax highlighting"
+" syntax highlighting "
 
 syntax enable
 try
@@ -47,24 +40,16 @@ endtry
 
 set background=dark
 
-"status line"
+" status line "
 
 set laststatus=2
 set statusline=\ You're\ on\ line\ %l\ of\ %F%m%r%h
 highlight statusline ctermbg=white
 highlight statusline ctermfg=darkblue
 
-"other stuff"
+" other stuff "
 
 set showcmd
-
 set nowrap
 
 command W w !sudo tee % > /dev/null
-
-function! HasPaste()
-    if &paste
-        return 'PASTE MODE  '
-    en
-    return ''
-endfunction

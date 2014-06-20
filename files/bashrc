@@ -58,7 +58,7 @@ txtrst='\e[0m'    # Text Reset
 plainprompt()
 {
   if [[ $VIRTUAL_ENV ]]; then
-    venv="(\[$bldylw\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
+    venv="(\[$bldgrn\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
   else
     venv=''
   fi
@@ -174,8 +174,8 @@ function extract {
     fi
 }
 
-source ~/scripts/git-completion.sh
-source ~/scripts/git-prompt.sh
+source ~/.scripts/git-completion.sh
+source ~/.scripts/git-prompt.sh
 
 source "/usr/local/bin/virtualenvwrapper.sh"
 

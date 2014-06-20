@@ -15,6 +15,7 @@ for index, item in settings.iteritems():
     dst = os.path.expanduser(item['dst'])
 
     if not os.path.islink(dst) and os.path.exists(dst):
+        print('Skipping existing file: %s' % dst)
         continue # only override symlinks, keep actual files 
 
     if not os.path.exists(src):

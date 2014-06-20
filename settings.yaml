@@ -27,5 +27,5 @@ gitignore:
     dst: ~/.gitignore
 
 scripts:
-    src: scripts/
-    dst: ~/scripts/
+    src: scripts
+    dst: ~/.scripts/

@@ -6,13 +6,20 @@ try:
     with open('settings.yaml') as stream:
         settings = yaml.load(stream)
 
-except IOError:
-    print('Could not load settings.yaml')
+except IOError, e:
+    print('Could not load settings.yaml', e)
     sys.exit(0)
 
 for index, item in settings.iteritems():
-    src = os.path.join('files', item['src'])
+    src = os.path.abspath(os.path.join('files', item['src']))
     dst = os.path.expanduser(item['dst'])
+
+    if not os.path.exists(src):
+        print('Source file does not exist: %' % src)
+        continue
 
     if not os.path.exists(dst):
         os.symlink(src, dst)
+        print('Created symlink: %s -> %s' % (dst, src))
+    else:
+        print('Destination file (%s) already exists. Skipping.' % dst)

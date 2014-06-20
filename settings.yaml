@@ -6,14 +6,6 @@ vim:
     src: vimrc
     dst: ~/.vimrc
 
-gitconfig:
-    src: gitconfig
-    dst: ~/.gitconfig
-
-gitignore:
-    src: gitignore
-    dst: ~/.gitignore
-
 tmux:
     src: tmux.conf
     dst: ~/.tmux.conf
@@ -22,6 +14,18 @@ ssh:
     src: sshconfig
     dst: ~/.ssh/config
 
-test:
-    src: test.conf
-    dst: ~/.test.conf
+gitconfig:
+    src: gitconfig
+    dst: ~/.gitconfig
+
+gitignore:
+    src: gitignore
+    dst: ~/.gitignore
+
+gitcompletion:
+    src: git-completion.sh
+    dst: ~/scripts/git-completion.sh
+
+gitprompt:
+    src: git-prompt.sh
+    dst: ~/scripts/git-prompt.sh

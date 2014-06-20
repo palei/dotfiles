@@ -13,7 +13,7 @@
     ui = auto
 
 [merge]
-	tool = meld
+    tool = meld
 
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore

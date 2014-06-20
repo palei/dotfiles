@@ -22,8 +22,8 @@ for index, item in settings.iteritems():
         try:
             os.symlink(src, dst)
             print('Created symlink: %s -> %s' % (dst, src))
-            
-        except Error, e:
+
+        except IOError, e:
             print('Could not create symlink for %s' % dst)
 
     else:

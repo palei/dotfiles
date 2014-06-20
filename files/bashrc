@@ -120,7 +120,7 @@ alias more='less'
 alias path='echo -e ${PATH//:/\\n}'
 alias edit='vim'
 alias wget='wget -c'
-alias now='date +"%T'
+alias now='date +%T'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 
 #################################################

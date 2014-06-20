@@ -1,11 +1,24 @@
-## My configs
+# My dotfiles
 
-This is where I keep my common config files so they can be easily updated and installed on new systems.
+Configs and other scripts that I need on all my Linux-based systems.
 
-**DISCLAIMER:** This is a personal project, but it may be useful for other too.
+## Install
 
-## How to use
+Clone this repo:
 
-1. Put, replace or edit configs in the `configs` folder.
-2. Set correct paths in `settings.yaml`.
-3. Use `./install.py` to put config files in place.
+    git clone git@github.com:palei/dotfiles.git
+
+Install requirements:
+
+    pip install requirements.txt
+
+Install the files like so:
+
+   cd dotfiles
+   ./install
+
+The installation script creates a symlink for everything defined in the `settings.yaml` file.
+
+## Adjusting to your needs
+
+...

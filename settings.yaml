@@ -10,6 +10,10 @@ tmux:
     src: tmux.conf
     dst: ~/.tmux.conf
 
+conky:
+    src: conkyrc
+    dst: ~/.conkyrc
+
 ssh:
     src: sshconfig
     dst: ~/.ssh/config
@@ -29,3 +33,4 @@ gitcompletion:
 gitprompt:
     src: git-prompt.sh
     dst: ~/scripts/git-prompt.sh
+

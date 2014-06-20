@@ -31,6 +31,4 @@ for index, item in settings.iteritems():
             os.remove(dst)
             os.symlink(src, dst)
             print('Updated symbolic link: %s -> %s' % (dst, src))
-
-
-    
+            

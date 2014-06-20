@@ -57,7 +57,13 @@ txtrst='\e[0m'    # Text Reset
 
 plainprompt()
 {
-  PS1="\[$bldred\]\h\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
+  if [[ $VIRTUAL_ENV ]]; then
+    venv="(\[$bldylw\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
+  else
+    venv=''
+  fi
+
+  PS1="$venv\[$bldred\]\h\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
 }
 
 basicprompt() 
@@ -109,6 +115,7 @@ alias lu='ls -ltur'
 alias lt='ls -ltr'
 alias lm='ls -al|less'
 alias lr='ls -lR'
+alias vf='cd'
 alias more='less'
 alias path='echo -e ${PATH//:/\\n}'
 alias edit='vim'
@@ -169,5 +176,7 @@ function extract {
 
 source ~/scripts/git-completion.sh
 source ~/scripts/git-prompt.sh
+
+source "/usr/local/bin/virtualenvwrapper.sh"
 
 PROMPT_COMMAND=plainprompt

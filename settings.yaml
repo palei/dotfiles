@@ -28,4 +28,4 @@ gitignore:
 
 scripts:
     src: scripts
-    dst: ~/.scripts/
+    dst: ~/.scripts

@@ -14,8 +14,8 @@ Install requirements:
 
 Install the files like so:
 
-   cd dotfiles
-   ./install
+    cd dotfiles
+    ./install
 
 The installation script creates a symlink for everything defined in the `settings.yaml` file.
 

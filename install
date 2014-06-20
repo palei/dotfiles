@@ -21,5 +21,6 @@ for index, item in settings.iteritems():
     if not os.path.exists(dst):
         os.symlink(src, dst)
         print('Created symlink: %s -> %s' % (dst, src))
+    
     else:
         print('Destination file (%s) already exists. Skipping.' % dst)

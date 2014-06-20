@@ -26,11 +26,6 @@ gitignore:
     src: gitignore
     dst: ~/.gitignore
 
-gitcompletion:
-    src: git-completion.sh
-    dst: ~/scripts/git-completion.sh
-
-gitprompt:
-    src: git-prompt.sh
-    dst: ~/scripts/git-prompt.sh
-
+scripts:
+    src: scripts/
+    dst: ~/scripts/

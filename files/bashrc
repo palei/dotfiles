@@ -55,7 +55,7 @@ txtrst='\e[0m'    # Text Reset
 #                                            #
 ##############################################
 
-plainprompt()
+prompt_plain()
 {
   if [[ $VIRTUAL_ENV ]]; then
     venv="(\[$bldgrn\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
@@ -67,7 +67,7 @@ plainprompt()
 }
 
 
-dotprompt()
+prompt_dot()
 {
   if [[ $VIRTUAL_ENV ]]; then
     venv="(\[$bldgrn\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
@@ -78,27 +78,27 @@ dotprompt()
   PS1="$venv\[$bldred\]@\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
 }
 
-basicprompt() 
+promt_basic() 
 {
   PS1="\! \u@\h \w \$ "
 }
 
-blueprompt() 
+prompt_blue() 
 {
   PS1="\! \[$txtblu\]\u\[$bldblu\]@\[$txtblu\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }
 
-whiteprompt()
+prompt_white()
 {
   PS1="\! \[$txtwht\]\u\[$bldgrn\]@\[$txtwht\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }
 
-timeprompt()
+prompt_time()
 {
   PS1="\t \[$txtblu\]\u\[$bldblu\]@\[$txtblu\]\h\[$txtrst\] \w \[$bldylw\]\$\[$txtrst\] "
 }
 
-blackprompt()
+prompt_black()
 {
   PS1="\t \[$txtblk\]\u\[$bldred\]@\[$txtblk\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }

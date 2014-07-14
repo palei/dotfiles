@@ -75,7 +75,7 @@ prompt_dot()
     venv=''
   fi
 
-  PS1="$venv\[$bldred\]@\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
+  PS1="$venv\[$bldred\]ĸ\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
 }
 
 promt_basic() 
@@ -196,4 +196,4 @@ source ~/.scripts/git-prompt.sh
 
 source "/usr/local/bin/virtualenvwrapper.sh"
 
-PROMPT_COMMAND=plainprompt
+PROMPT_COMMAND=prompt_dot

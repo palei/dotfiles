@@ -66,6 +66,18 @@ plainprompt()
   PS1="$venv\[$bldred\]\h\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
 }
 
+
+dotprompt()
+{
+  if [[ $VIRTUAL_ENV ]]; then
+    venv="(\[$bldgrn\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
+  else
+    venv=''
+  fi
+
+  PS1="$venv\[$bldred\]@\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
+}
+
 basicprompt() 
 {
   PS1="\! \u@\h \w \$ "
@@ -150,6 +162,11 @@ function parse_git_branch {
 # remove .pyc files recursively
 function rmpyc {
   find -name "*.pyc" -delete
+}
+
+# edit ~/.bashrc
+function bedit {
+    vim ~/.bashrc
 }
 
 # extract almost anything

@@ -169,6 +169,15 @@ function bedit {
     vim ~/.bashrc
 }
 
+function apt_install_cli {
+    apt-get install aptitude vim git irssi mtr-tiny
+}
+
+function apt_install_gui {
+    apt-get install chromium-browser gimp 
+}
+
+
 # extract almost anything
 function extract {
     if [ -f $1 ] ; then

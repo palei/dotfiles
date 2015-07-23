@@ -58,7 +58,7 @@ FOTOROOT='/var/www/html/CORE'
 #                                            #
 ##############################################
 
-plainprompt()
+prompt_plain()
 {
   if [[ $VIRTUAL_ENV ]]; then
     venv="(\[$bldgrn\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
@@ -79,27 +79,38 @@ plainprompt()
   PS1="$venv\[$bldred\]\h\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]$plugin%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
 }
 
-basicprompt()
+prompt_dot()
+{
+  if [[ $VIRTUAL_ENV ]]; then
+    venv="(\[$bldgrn\]`basename $VIRTUAL_ENV`\[$txtrst\]) "
+  else
+    venv=''
+  fi
+
+  PS1="$venv\[$bldred\]ĸ\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
+}
+
+promt_basic() 
 {
   PS1="\! \u@\h \w \$ "
 }
-
 blueprompt()
+
 {
   PS1="\! \[$txtblu\]\u\[$bldblu\]@\[$txtblu\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }
 
-whiteprompt()
+prompt_white()
 {
   PS1="\! \[$txtwht\]\u\[$bldgrn\]@\[$txtwht\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }
 
-timeprompt()
+prompt_time()
 {
   PS1="\t \[$txtblu\]\u\[$bldblu\]@\[$txtblu\]\h\[$txtrst\] \w \[$bldylw\]\$\[$txtrst\] "
 }
 
-blackprompt()
+prompt_black()
 {
   PS1="\t \[$txtblk\]\u\[$bldred\]@\[$txtblk\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }
@@ -187,6 +198,7 @@ function sasscompile {
        --no-cache;
 }
 
+
 # extract almost anything
 function extract {
     if [ -f $1 ] ; then
@@ -214,4 +226,4 @@ source ~/.scripts/git-prompt.sh
 
 #source "/usr/local/bin/virtualenvwrapper.sh"
 
-PROMPT_COMMAND=plainprompt
+PROMPT_COMMAND=prompt_dot

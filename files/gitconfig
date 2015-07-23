@@ -1,6 +1,6 @@
 [user]
-    name = Ilkka Pale
-    email = ilkka.pale@jyu.fi
+	name = Ilkka Pale
+	email = ilkka.pale@fotograf.de
 
 [alias]
     lg = log --graph --pretty=format:'%Cred%h -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>'
@@ -8,7 +8,7 @@
     l0g = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     co = checkout
     st = status -sb
-
+    meld = !~/projects/git-meld/git-meld.pl
 [color]
     ui = auto
 
@@ -17,3 +17,7 @@
 
 [core]
     excludesfile = ~/.gitignore
+[push]
+	default = simple
+[pull]
+	default = simple

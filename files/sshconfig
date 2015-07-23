@@ -1,7 +1,7 @@
 # This is my ~/.ssh/config
 
-Host unk
-    HostName unk.me
+Host lijk
+    HostName lijk.net
     Port 2222
     User noob13
 

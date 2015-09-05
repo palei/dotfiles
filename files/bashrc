@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # ~/.bashrc
 
 #######################################
@@ -46,7 +45,7 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
 # Constants
-FOTOROOT='/var/www/html/CORE'
+FOTOROOT='/var/www/html/core'
 
 ##############################################
 #                                  _         #
@@ -87,15 +86,15 @@ prompt_dot()
     venv=''
   fi
 
-  PS1="$venv\[$bldred\]ĸ\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
+  PS1="$venv\[$bldred\]\h\[$txtrst\] \w$(__git_ps1 " (\[$txtblu\]%s\[$txtrst\])") \[$bldylw\]\$\[$txtrst\] "
 }
 
 promt_basic() 
 {
   PS1="\! \u@\h \w \$ "
 }
-blueprompt()
 
+blueprompt()
 {
   PS1="\! \[$txtblu\]\u\[$bldblu\]@\[$txtblu\]\h\[$txtrst\] \w \[$bldred\]\$\[$txtrst\] "
 }
@@ -124,6 +123,7 @@ prompt_black()
 #                                  #
 ####################################
 
+alias node="nodejs"
 alias ..='cd ..'
 alias c='clear'
 alias h='history'
@@ -179,12 +179,12 @@ function rmpyc {
 
 # recursively run git command
 function gittree {
-  /var/www/html/CORE/utils/gittree $@
+  /var/www/html/core/utils/gittree $@
 }
 
 # run cake shell
 function cake {
-    /var/www/html/CORE/app/Console/cake $@
+    /var/www/html/core/app/Console/cake $@
 }
 
 function sasswatch {
@@ -226,4 +226,4 @@ source ~/.scripts/git-prompt.sh
 
 #source "/usr/local/bin/virtualenvwrapper.sh"
 
-PROMPT_COMMAND=prompt_dot
+PROMPT_COMMAND=prompt_plain
